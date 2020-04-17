@@ -1,0 +1,27 @@
+{
+  "name": "local-async-storage",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/local-async-storage.js",
+  "module": "dist/local-async-storage.es.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "node test/test.js",
+    "pretest": "npm run build"
+  },
+  "author": "Bunlong <bunlong.van@gmail.com>",
+  "repository": "https://github.com/Bunlong/local-async-storage.js.git",
+  "bugs": {
+    "url": "https://github.com/Bunlong/local-async-storage.js/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "rollup": "^2.6.1"
+  },
+  "files": [
+    "dist"
+  ]
+}
