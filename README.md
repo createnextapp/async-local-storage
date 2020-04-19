@@ -21,31 +21,54 @@ yarn add local-async-storage
 ### Import 
 
 ```js
-import LocalAsyncStorage from 'local-async-storage';
+import LocalAsyncStorage from 'local-async-storage'
 ```
 
-### `setItem`
-
-Stores a `value` for the `key`, invokes (optional) `callback` once completed.
-
-**Function**:
+### Store data
 
 ```js
-static setItem(key, value, [callback])
-```
-
-**Returns**:
-
-`Promise` object.
-
-**Example**:
-
-```js
-setValue = async () => {
+storeData = async () => {
   try {
     await LocalAsyncStorage.setItem('@key', 'value')
   } catch(e) {
-    // set error
+    // error
   }
 }
 ```
+
+### Read data
+
+```js
+readData = async () => {
+  let item
+
+  try {
+    item = await LocalAsyncStorage.getItem('@key')
+  } catch(e) {
+    // error
+  }
+
+  console.log(item)
+}
+```
+
+## 💖 Wrap Up
+
+If you think any of the `local-async-storage` can be improved, please do open a PR with any updates and submit any issues. Also, I will continue to improve this, so you might want to watch/star this repository to revisit.
+
+## 🌟 Contribution
+
+We'd love to have your helping hand on contributions to `local-async-storage` by forking and sending a pull request!
+
+Your contributions are heartily ♡ welcome, recognized and appreciated. (✿◠‿◠)
+
+How to contribute:
+
+- Open pull request with improvements
+- Discuss ideas in issues
+- Spread the word
+- Reach out with any feedback
+
+## ⚖️ License
+
+The MIT License [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

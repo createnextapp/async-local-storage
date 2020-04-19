@@ -32,7 +32,7 @@ setValue = async () => {
   try {
     await LocalAsyncStorage.setItem('@key', 'value')
   } catch(e) {
-    // set error
+    // error
   }
 }
 ```
@@ -60,7 +60,7 @@ getItem = async () => {
   try {
     item = await LocalAsyncStorage.getItem('@key')
   } catch(e) {
-    // read error
+    // error
   }
 
   console.log(item)
@@ -88,7 +88,7 @@ removeItem = async () => {
   try {
     await LocalAsyncStorage.removeItem('@key')
   } catch(e) {
-    // remove error
+    // error
   }
 }
 ```
@@ -114,7 +114,7 @@ clearStorage = async () => {
   try {
     await LocalAsyncStorage.clearStorage()
   } catch(e) {
-    // clear error
+    // error
   }
 }
 ```
@@ -142,7 +142,7 @@ getKeys = async () => {
   try {
     keys = await LocalAsyncStorage.getKeys()
   } catch(e) {
-    // read key error
+    // error
   }
 
   console.log(keys)
@@ -173,7 +173,7 @@ setMultiple = async () => {
   try {
     await LocalAsyncStorage.setMultiple([value1, value2])
   } catch(e) {
-    //save error
+    // error
   }
 }
 ```
@@ -201,7 +201,7 @@ getMultiple = async () => {
   try {
     values = await LocalAsyncStorage.getMultiple(['@MyApp_user', '@MyApp_key'])
   } catch(e) {
-    // read error
+    // error
   }
 
   console.log(values)
@@ -231,7 +231,7 @@ removeFew = async () => {
   try {
     await LocalAsyncStorage.removeMultiple(keys)
   } catch(e) {
-    // remove error
+    // error
   }
 }
 ```
