@@ -4,6 +4,7 @@
   "description": "A local asynchronous storage, persistent, key-value storage system for the Web and App.",
   "main": "dist/local-async-storage.js",
   "module": "dist/local-async-storage.es.js",
+  "jsnext:main": "dist/local-async-storage.es.js",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
@@ -11,9 +12,10 @@
     "pretest": "npm run build"
   },
   "author": "Bunlong <bunlong.van@gmail.com>",
-  "repository": "https://github.com/Bunlong/local-async-storage.js.git",
+  "homepage": "https://local-async-storage.github.io",
+  "repository": "https://github.com/Bunlong/local-async-storage.git",
   "bugs": {
-    "url": "https://github.com/Bunlong/local-async-storage.js/issues"
+    "url": "https://github.com/Bunlong/local-async-storage/issues"
   },
   "license": "MIT",
   "devDependencies": {
