@@ -2,6 +2,8 @@
 
 A local asynchronous storage, persistent, key-value storage system for the Web and App.
 
+[![NPM](https://img.shields.io/npm/v/local-async-storage.svg)](https://www.npmjs.com/package/local-async-storage)
+
 ## 🔧 Install
 
 local-async-storage is available on npm. It can be installed with the following command:
@@ -20,7 +22,7 @@ yarn add local-async-storage
 
 To learn how to use local-async-storage:
 
-* [Documentation](./API.md)
+* [API Documentation](./API.md)
 
 ### Import 
 
