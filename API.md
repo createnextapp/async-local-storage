@@ -54,12 +54,16 @@ static getItem(key, [callback])
 **Example**:
 
 ```js
-getValue = async () => {
+getItem = async () => {
+  let item
+
   try {
-    const value = await LocalAsyncStorage.getItem('@key')
+    item = await LocalAsyncStorage.getItem('@key')
   } catch(e) {
     // read error
   }
+
+  console.log(item)
 }
 ```
 
@@ -133,22 +137,26 @@ static getKeys([callback])
 
 ```js
 getKeys = async () => {
+  let keys = []
+
   try {
-    await LocalAsyncStorage.getKeys()
+    keys = await LocalAsyncStorage.getKeys()
   } catch(e) {
     // read key error
   }
+
+  console.log(keys)
 }
 ```
 
-## `setItems`
+## `setMultiple`
 
 Stores multiple key-value pairs in a batch. Once completed, `callback` with any errors will be called.
 
 **Function**:
 
 ```js
-static setItems(keyValuePairs, [callback])
+static setMultiple(keyValuePairs, [callback])
 ```
 
 **Returns**:
@@ -158,11 +166,12 @@ static setItems(keyValuePairs, [callback])
 **Example**:
 
 ```js
-multiSet = async () => {
-  const firstPair = ["@key1", "value1"]
-  const secondPair = ["@key2", "value2"]
+setMultiple = async () => {
+  const firstPair = { key1: 'hello1' };
+  const secondPair = { key2: 'hello2' };
+
   try {
-    await LocalAsyncStorage.setItems([firstPair, secondPair])
+    await LocalAsyncStorage.setMultiple([value1, value2])
   } catch(e) {
     //save error
   }
@@ -187,11 +196,15 @@ static getMultiple(keys, [callback])
 
 ```js
 getMultiple = async () => {
+  let values
+
   try {
-    await LocalAsyncStorage.getMultiple(['@MyApp_user', '@MyApp_key'])
+    values = await LocalAsyncStorage.getMultiple(['@MyApp_user', '@MyApp_key'])
   } catch(e) {
     // read error
   }
+
+  console.log(values)
 }
 ```
 

@@ -18,4 +18,34 @@ yarn add local-async-storage
 
 ## 💡 Usage
 
+### Import 
 
+```js
+import LocalAsyncStorage from 'local-async-storage';
+```
+
+### `setItem`
+
+Stores a `value` for the `key`, invokes (optional) `callback` once completed.
+
+**Function**:
+
+```js
+static setItem(key, value, [callback])
+```
+
+**Returns**:
+
+`Promise` object.
+
+**Example**:
+
+```js
+setValue = async () => {
+  try {
+    await LocalAsyncStorage.setItem('@key', 'value')
+  } catch(e) {
+    // set error
+  }
+}
+```
