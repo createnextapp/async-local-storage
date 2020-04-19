@@ -1,7 +1,7 @@
 {
   "name": "local-async-storage",
   "version": "0.0.1",
-  "description": "",
+  "description": "A local asynchronous storage, persistent, key-value storage system for the Web and App.",
   "main": "dist/local-async-storage.js",
   "module": "dist/local-async-storage.es.js",
   "scripts": {
@@ -24,5 +24,21 @@
   },
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "localstorage",
+    "local-storage",
+    "asyncstorage",
+    "localasyncstorage",
+    "local-async-storage",
+    "storage",
+    "react",
+    "reactjs",
+    "vue",
+    "vuejs",
+    "angular",
+    "angularjs",
+    "web",
+    "app"
   ]
 }

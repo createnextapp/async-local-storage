@@ -9,15 +9,16 @@
   - [getKeys](#getKeys)
   - [setMultiple](#setMultiple)
   - [getMultiple](#getMultiple)
+  - [removeMultiple](#removeMultiple)
 
 ## `setItem`
 
 Stores a `value` for the `key`, invokes (optional) `callback` once completed.
 
-**Signature**:
+**Function**:
 
 ```js
-static setItem(key: string, value: string, [callback]: ?(error: ?Error) => void): Promise
+static setItem(key, value, [callback])
 ```
 
 **Returns**:
@@ -27,15 +28,12 @@ static setItem(key: string, value: string, [callback]: ?(error: ?Error) => void)
 **Example**:
 
 ```js
-
 setValue = async () => {
   try {
-    await LocalAsyncStorage.setItem('@MyApp_key', 'my secret value')
+    await LocalAsyncStorage.setItem('@key', 'value')
   } catch(e) {
     // set error
   }
-
-  console.log('Done.')
 }
 ```
 
@@ -43,10 +41,10 @@ setValue = async () => {
 
 Fetches a data for a given `key`, invokes (optional) callback once completed.
 
-**Signature**:
+**Function**:
 
 ```js
-static getItem(key: string, [callback]: ?(error: ?Error, result: ?string) => void): Promise
+static getItem(key, [callback])
 ```
 
 **Returns**:
@@ -56,16 +54,12 @@ static getItem(key: string, [callback]: ?(error: ?Error, result: ?string) => voi
 **Example**:
 
 ```js
-
 getValue = async () => {
   try {
-    const value = await LocalAsyncStorage.getItem('@MyApp_key')
+    const value = await LocalAsyncStorage.getItem('@key')
   } catch(e) {
     // read error
   }
-
-  console.log('Done.')
-
 }
 ```
 
@@ -73,10 +67,10 @@ getValue = async () => {
 
 Removes item for a `key`, invokes (optional) callback once completed.
 
-**Signature**:
+**Function**:
 
 ```js
-static removeItem(key: string, [callback]: ?(error: ?Error) => void): Promise
+static removeItem(key, [callback])
 ```
 
 **Returns**:
@@ -88,12 +82,10 @@ static removeItem(key: string, [callback]: ?(error: ?Error) => void): Promise
 ```js
 removeItem = async () => {
   try {
-    await LocalAsyncStorage.removeItem('@MyApp_key')
+    await LocalAsyncStorage.removeItem('@key')
   } catch(e) {
     // remove error
   }
-
-  console.log('Done.')
 }
 ```
 
@@ -101,10 +93,10 @@ removeItem = async () => {
 
 Removes **whole** `LocalAsyncStorage` data, for all clients, libraries, etc. You probably want to use [removeItem](#removeItem) or [removeMultiple](#removeMultiple) to clear only your App's keys.
 
-**Signature**:
+**Function**:
 
 ```js
-static clearStorage([callback]: ?(error: ?Error) => void): Promise
+static clearStorage([callback])
 ```
 
 **Returns**:
@@ -120,8 +112,6 @@ clearStorage = async () => {
   } catch(e) {
     // clear error
   }
-
-  console.log('Done.')
 }
 ```
 
@@ -129,11 +119,10 @@ clearStorage = async () => {
 
 Returns all keys known to your App, for all callers, libraries, etc. Once completed, invokes `callback` with errors (if any) and array of keys.
 
-
-**Signature**:
+**Function**:
 
 ```js
-static getKeys([callback]: ?(error: ?Error, keys: ?Array<string>) => void): Promise
+static getKeys([callback])
 ```
 
 **Returns**:
@@ -144,17 +133,11 @@ static getKeys([callback]: ?(error: ?Error, keys: ?Array<string>) => void): Prom
 
 ```js
 getKeys = async () => {
-  let keys = []
-
   try {
-    keys = await LocalAsyncStorage.getKeys()
+    await LocalAsyncStorage.getKeys()
   } catch(e) {
     // read key error
   }
-
-  console.log(keys)
-  // example console.log result:
-  // ['@MyApp_user', '@MyApp_key']
 }
 ```
 
@@ -162,10 +145,10 @@ getKeys = async () => {
 
 Stores multiple key-value pairs in a batch. Once completed, `callback` with any errors will be called.
 
-**Signature**:
+**Function**:
 
 ```js
-static setItems(keyValuePairs: Array<Array<string>>, [callback]: ?(errors: ?Array<Error>) => void): Promise
+static setItems(keyValuePairs, [callback])
 ```
 
 **Returns**:
@@ -176,15 +159,13 @@ static setItems(keyValuePairs: Array<Array<string>>, [callback]: ?(errors: ?Arra
 
 ```js
 multiSet = async () => {
-  const firstPair = ["@MyApp_user", "value_1"]
-  const secondPair = ["@MyApp_key", "value_2"]
+  const firstPair = ["@key1", "value1"]
+  const secondPair = ["@key2", "value2"]
   try {
     await LocalAsyncStorage.setItems([firstPair, secondPair])
   } catch(e) {
     //save error
   }
-
-  console.log("Done.")
 }
 ```
 
@@ -192,33 +173,25 @@ multiSet = async () => {
 
 Fetches multiple key-value pairs for given array of `keys` in a batch. Once completed, invokes `callback` with errors (if any) and results.
 
-**Signature**:
+**Function**:
 
 ```js
-static getMultiple(keys: Array<string>, [callback]: ?(errors: ?Array<Error>, result: ?Array<Array<string>>) => void): Promise
+static getMultiple(keys, [callback])
 ```
 
 **Returns**:
 
 `Promise` of array with coresponding key-value pairs found, stored as `[key, value]` array.
 
-
 **Example**:
 
 ```js
 getMultiple = async () => {
-  let values
-
   try {
-    values = await LocalAsyncStorage.getMultiple(['@MyApp_user', '@MyApp_key'])
+    await LocalAsyncStorage.getMultiple(['@MyApp_user', '@MyApp_key'])
   } catch(e) {
     // read error
   }
-  
-  console.log(values)
-
-  // example console.log output:
-  // [ ['@MyApp_user', 'myUserValue'], ['@MyApp_key', 'myKeyValue'] ]
 }
 ```
 
@@ -226,10 +199,10 @@ getMultiple = async () => {
 
 Clears multiple key-value entries for given array of `keys` in a batch. Once completed, invokes a `callback` with errors (if any).
 
-**Signature**:
+**Function**:
 
 ```js
-static removeMultiple(keys: Array<string>, [callback]: ?(errors: ?Array<Error>) => void)
+static removeMultiple(keys, [callback])
 ```
 
 **Returns**:
@@ -247,8 +220,5 @@ removeFew = async () => {
   } catch(e) {
     // remove error
   }
-
-  console.log('Done')
 }
-
 ```
