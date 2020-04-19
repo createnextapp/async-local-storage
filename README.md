@@ -2,7 +2,7 @@
 
 A local asynchronous storage, persistent, key-value storage system for the Web and App.
 
-### 🔧 Install
+## 🔧 Install
 
 local-async-storage is available on npm. It can be installed with the following command:
 
@@ -16,5 +16,6 @@ local-async-storage is available on yarn as well. It can be installed with the f
 yarn add local-async-storage
 ```
 
-### 💡 Usage
+## 💡 Usage
+
 
