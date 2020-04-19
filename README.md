@@ -2,7 +2,7 @@
 
 A local asynchronous storage, persistent, key-value storage system for the Web and App.
 
-[![NPM](https://img.shields.io/npm/v/local-async-storage.svg)](https://www.npmjs.com/package/local-async-storage) ![npm bundle size](https://img.shields.io/bundlephobia/min/local-async-storage)(https://www.npmjs.com/package/local-async-storage)
+[![NPM](https://img.shields.io/npm/v/local-async-storage.svg)](https://www.npmjs.com/package/local-async-storage) ![npm bundle size](https://img.shields.io/bundlephobia/min/local-async-storage)
 
 ## 🔧 Install
 
