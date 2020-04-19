@@ -18,6 +18,10 @@ yarn add local-async-storage
 
 ## 💡 Usage
 
+To learn how to use local-async-storage:
+
+* [Documentation](./API.md)
+
 ### Import 
 
 ```js
