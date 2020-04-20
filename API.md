@@ -47,7 +47,7 @@ A `Promise` object.
       <td>value</td>
       <td>string</td>
       <td>Yes</td>
-      <td>Value to set for the `key`.</td>
+      <td>Value to set for the key.</td>
     </tr>
     <tr>
       <td>callback</td>
@@ -72,7 +72,7 @@ setValue = async () => {
 
 ## `getItem`
 
-Fetches a data for a given `key`, invokes (optional) callback once completed.
+Fetches an item for a key and invokes (optional) a callback upon completion.
 
 **Function**:
 
@@ -82,7 +82,34 @@ static getItem(key, [callback])
 
 **Returns**:
 
-`Promise` with data, if exists, `null` otherwise.
+A `Promise` with item, if exists, `null` otherwise.
+
+**Parameters:**
+
+<table>
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>TYPE</th>
+      <th>REQUIRED</th>
+      <th>DESCRIPTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>key</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Key of the item to fetch.</td>
+    </tr>
+    <tr>
+      <td>callback</td>
+      <td>?(error: ?Error, result: ?string) => void</td>
+      <td>No</td>
+      <td>Function that will be called with a result if found or any error.</td>
+    </tr>
+  </tbody>
+</table>
 
 **Example**:
 
@@ -102,7 +129,7 @@ getItem = async () => {
 
 ## `removeItem`
 
-Removes item for a `key`, invokes (optional) callback once completed.
+Removes an item for a `key` and invokes (optional) a callback upon completion.
 
 **Function**:
 
@@ -112,7 +139,34 @@ static removeItem(key, [callback])
 
 **Returns**:
 
-`Promise` object.
+A `Promise` object.
+
+**Parameters:**
+
+<table>
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>TYPE</th>
+      <th>REQUIRED</th>
+      <th>DESCRIPTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>key</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Key of the item to remove.</td>
+    </tr>
+    <tr>
+      <td>callback</td>
+      <td>?(error: ?Error) => void</td>
+      <td>No</td>
+      <td>Function that will be called with any error.</td>
+    </tr>
+  </tbody>
+</table>
 
 **Example**:
 
@@ -128,7 +182,7 @@ removeItem = async () => {
 
 ## `clearStorage`
 
-Removes **whole** `LocalAsyncStorage` data, for all clients, libraries, etc. You probably want to use [removeItem](#removeItem) or [removeMultiple](#removeMultiple) to clear only your App's keys.
+Erases all `LocalAsyncStorage` for all clients, libraries, etc. You probably don't want to call this; use [removeItem](#removeItem) or [removeMultiple](#removeMultiple) to clear only your app's keys.
 
 **Function**:
 
@@ -138,7 +192,28 @@ static clearStorage([callback])
 
 **Returns**:
 
-`Promise` object.
+A `Promise` object.
+
+**Parameters:**
+
+<table>
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>TYPE</th>
+      <th>REQUIRED</th>
+      <th>DESCRIPTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>callback</td>
+      <td>?(error: ?Error) => void</td>
+      <td>No</td>
+      <td>Function that will be called with any error.</td>
+    </tr>
+  </tbody>
+</table>
 
 **Example**:
 
@@ -154,7 +229,7 @@ clearStorage = async () => {
 
 ## `getKeys`
 
-Returns all keys known to your App, for all callers, libraries, etc. Once completed, invokes `callback` with errors (if any) and array of keys.
+Gets all keys known to your app; for all callers, libraries, etc, and invokes (optional) a `callback` upon completion.
 
 **Function**:
 
@@ -164,7 +239,28 @@ static getKeys([callback])
 
 **Returns**:
 
-`Promise` object.
+A `Promise` object.
+
+**Parameters:**
+
+<table>
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>TYPE</th>
+      <th>REQUIRED</th>
+      <th>DESCRIPTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>callback</td>
+      <td>?(error: ?Error, keys: ?Array) => void	</td>
+      <td>No</td>
+      <td>Function that will be called with all keys found and any error.</td>
+    </tr>
+  </tbody>
+</table>
 
 **Example**:
 
@@ -194,7 +290,34 @@ static setMultiple(keyValuePairs, [callback])
 
 **Returns**:
 
-`Promise` object.
+A `Promise` object.
+
+**Parameters:**
+
+<table>
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>TYPE</th>
+      <th>REQUIRED</th>
+      <th>DESCRIPTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>keyValuePairs</td>
+      <td>Array<Object></td>
+      <td>Yes</td>
+      <td>Array of key-value array for the items to set.</td>
+    </tr>
+    <tr>
+      <td>callback</td>
+      <td>?(errors: ?Array) => void</td>
+      <td>No</td>
+      <td>Function that will be called with an array of any key-specific errors found.</td>
+    </tr>
+  </tbody>
+</table>
 
 **Example**:
 
@@ -223,7 +346,34 @@ static getMultiple(keys, [callback])
 
 **Returns**:
 
-`Promise` of array with coresponding key-value pairs found, stored as `[key, value]` array.
+A `Promise` of array with coresponding key-value pairs found, stored as `{key: value}` array.
+
+**Parameters:**
+
+<table>
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>TYPE</th>
+      <th>REQUIRED</th>
+      <th>DESCRIPTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>keys</td>
+      <td>Array<Object></td>
+      <td>Yes</td>
+      <td>Array of key for the items to get.</td>
+    </tr>
+    <tr>
+      <td>callback</td>
+      <td>?(errors: ?Array, result: ?Array<Array>) => void</td>
+      <td>No</td>
+      <td>Function that will be called with a key-value array of the results, plus an array of any key-specific errors found.</td>
+    </tr>
+  </tbody>
+</table>
 
 **Example**:
 
@@ -232,7 +382,7 @@ getMultiple = async () => {
   let values
 
   try {
-    values = await LocalAsyncStorage.getMultiple(['@MyApp_user', '@MyApp_key'])
+    values = await LocalAsyncStorage.getMultiple(['@key1', '@key2'])
   } catch(e) {
     // error
   }
@@ -243,7 +393,7 @@ getMultiple = async () => {
 
 ## `removeMultiple`
 
-Clears multiple key-value entries for given array of `keys` in a batch. Once completed, invokes a `callback` with errors (if any).
+Delete multiple key-value entries for given array of `keys` in a batch. Once completed, invokes a `callback` with errors (if any).
 
 **Function**:
 
@@ -253,7 +403,34 @@ static removeMultiple(keys, [callback])
 
 **Returns**:
 
-`Promise` object.
+A `Promise` object.
+
+**Parameters:**
+
+<table>
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>TYPE</th>
+      <th>REQUIRED</th>
+      <th>DESCRIPTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>keys</td>
+      <td>Array<Object></td>
+      <td>Yes</td>
+      <td>Array of key for the items to delete.</td>
+    </tr>
+    <tr>
+      <td>callback</td>
+      <td>?(errors: ?Array) => void</td>
+      <td>No</td>
+      <td>Function that will be called an array of any key-specific errors found.</td>
+    </tr>
+  </tbody>
+</table>
 
 **Example**:
 
