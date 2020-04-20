@@ -1,7 +1,7 @@
 {
   "name": "local-async-storage",
   "version": "0.0.1",
-  "description": "A local asynchronous storage, persistent, key-value storage system for the Web and App.",
+  "description": "LocalAsyncStorage is an unencrypted, asynchronous, persistent, key-value storage system that is global to the app in web browser. It should be used instead of LocalStorage.",
   "main": "dist/local-async-storage.js",
   "module": "dist/local-async-storage.es.js",
   "jsnext:main": "dist/local-async-storage.es.js",

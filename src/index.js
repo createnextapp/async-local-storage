@@ -49,7 +49,7 @@ export default class LocalAsyncStorage {
   }
 
   /**
-   * Removes a `key`
+   * Removes a `key`.
    */
   static removeItem(key, callback) {
     return createPromise(() => {
