@@ -15,13 +15,13 @@
 
 Sets the `value` for a `key` and invokes a callback upon completion.
 
-**Functions**:
+**Method**:
 
 ```js
 static setItem(key, value, [callback])
 ```
 
-**Returns**:
+**Return**:
 
 A `Promise` object.
 
@@ -74,13 +74,13 @@ setValue = async () => {
 
 Fetches an item for a key and invokes (optional) a callback upon completion.
 
-**Function**:
+**Method**:
 
 ```js
 static getItem(key, [callback])
 ```
 
-**Returns**:
+**Return**:
 
 A `Promise` with item, if exists, `null` otherwise.
 
@@ -131,13 +131,13 @@ getItem = async () => {
 
 Removes an item for a `key` and invokes (optional) a callback upon completion.
 
-**Function**:
+**Method**:
 
 ```js
 static removeItem(key, [callback])
 ```
 
-**Returns**:
+**Return**:
 
 A `Promise` object.
 
@@ -184,13 +184,13 @@ removeItem = async () => {
 
 Erases all `LocalAsyncStorage` for all clients, libraries, etc. You probably don't want to call this; use [removeItem](#removeItem) or [removeMultiple](#removeMultiple) to clear only your app's keys.
 
-**Function**:
+**Method**:
 
 ```js
 static clearStorage([callback])
 ```
 
-**Returns**:
+**Return**:
 
 A `Promise` object.
 
@@ -231,13 +231,13 @@ clearStorage = async () => {
 
 Gets all keys known to your app; for all callers, libraries, etc, and invokes (optional) a `callback` upon completion.
 
-**Function**:
+**Method**:
 
 ```js
 static getKeys([callback])
 ```
 
-**Returns**:
+**Return**:
 
 A `Promise` object.
 
@@ -282,13 +282,13 @@ getKeys = async () => {
 
 Stores multiple key-value pairs in a batch. Once completed, `callback` with any errors will be called.
 
-**Function**:
+**Method**:
 
 ```js
 static setMultiple(keyValuePairs, [callback])
 ```
 
-**Returns**:
+**Return**:
 
 A `Promise` object.
 
@@ -338,13 +338,13 @@ setMultiple = async () => {
 
 Fetches multiple key-value pairs for given array of `keys` in a batch. Once completed, invokes `callback` with errors (if any) and results.
 
-**Function**:
+**Method**:
 
 ```js
 static getMultiple(keys, [callback])
 ```
 
-**Returns**:
+**Return**:
 
 A `Promise` of array with coresponding key-value pairs found, stored as `{key: value}` array.
 
@@ -395,13 +395,13 @@ getMultiple = async () => {
 
 Delete multiple key-value entries for given array of `keys` in a batch. Once completed, invokes a `callback` with errors (if any).
 
-**Function**:
+**Method**:
 
 ```js
 static removeMultiple(keys, [callback])
 ```
 
-**Returns**:
+**Return**:
 
 A `Promise` object.
 
