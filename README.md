@@ -2,13 +2,19 @@
 
 LocalAsyncStorage is an encrypted, asynchronous, persistent, key-value storage system that is global to the app in web browser. It should be used instead of LocalStorage.
 
-The LocalAsyncStorage JavaScript code is a facade that provides a clear JavaScript API, real Error objects, and non-multi functions. Each method in the API returns a Promise object.
-
 [![NPM](https://img.shields.io/npm/v/local-async-storage.svg)](https://www.npmjs.com/package/local-async-storage) ![npm bundle size](https://img.shields.io/bundlephobia/min/local-async-storage)
 
 ## ❓ Why LocalAsyncStorage instead of LocalStorage?
 
-Sensitive data is well encrypted and handled with care.
+**Cons of LocalStorage**
+
+LocalStorage is synchronous, each local storage operation you run will be one-at-a-time. For complex applications this is a big no-no as it'll slow down your app's runtime.
+
+**Pros of LocalAsyncStorage**
+
+LocalAsyncStorage is asynchronous, each local async storage operation you run will be multi-at-a-time. It'll speed up your app's runtime.
+
+The LocalAsyncStorage JavaScript code is a facade that provides a clear JavaScript API, real Error objects, and non-multi functions. Each method in the API returns a Promise object.
 
 ## 🔧 Install
 
