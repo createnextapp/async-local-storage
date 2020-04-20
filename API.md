@@ -13,9 +13,9 @@
 
 ## `setItem`
 
-Stores a `value` for the `key`, invokes (optional) `callback` once completed.
+Sets the `value` for a `key` and invokes a callback upon completion.
 
-**Function**:
+**Functions**:
 
 ```js
 static setItem(key, value, [callback])
@@ -23,7 +23,40 @@ static setItem(key, value, [callback])
 
 **Returns**:
 
-`Promise` object.
+A `Promise` object.
+
+**Parameters:**
+
+<table>
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>TYPE</th>
+      <th>REQUIRED</th>
+      <th>DESCRIPTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>key</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Key of the item to set.</td>
+    </tr>
+    <tr>
+      <td>value</td>
+      <td>string</td>
+      <td>Yes</td>
+      <td>Value to set for the `key`.</td>
+    </tr>
+    <tr>
+      <td>callback</td>
+      <td>?(error: ?Error) => void</td>
+      <td>No</td>
+      <td>Function that will be called with any error.</td>
+    </tr>
+  </tbody>
+</table>
 
 **Example**:
 
