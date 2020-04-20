@@ -1,6 +1,6 @@
 # local-async-storage
 
-LocalAsyncStorage is an encrypted, asynchronous, persistent, key-value storage system that is global to the app in web browser. It should be used instead of LocalStorage.
+LocalAsyncStorage is an unencrypted, asynchronous, persistent, key-value storage system that is global to the app in web browser. It should be used instead of LocalStorage.
 
 [![NPM](https://img.shields.io/npm/v/local-async-storage.svg)](https://www.npmjs.com/package/local-async-storage) ![npm bundle size](https://img.shields.io/bundlephobia/min/local-async-storage)
 
