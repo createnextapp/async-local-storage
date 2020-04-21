@@ -14,7 +14,7 @@ LocalStorage is synchronous, each local storage operation you run will be one-at
 
 LocalAsyncStorage is asynchronous, each local async storage operation you run will be multi-at-a-time. It'll speed up your app's runtime.
 
-The LocalAsyncStorage JavaScript code is a facade that provides a clear [JavaScript API](./API.md), real Error objects, and non-multi functions. Each method in the API returns a Promise object.
+The LocalAsyncStorage JavaScript code is a facade that provides [a clear JavaScript API](./API.md), real Error objects, and non-multi functions. Each method in the API returns a Promise object.
 
 ## 🔧 Install
 
