@@ -13,7 +13,7 @@
 
 ## `setItem`
 
-Sets the `value` for a `key` and invokes a callback upon completion.
+Sets a `value` for a `key` and invokes a (optional) callback once completed.
 
 **Method**:
 
@@ -72,7 +72,7 @@ setItem = async () => {
 
 ## `getItem`
 
-Fetches an item for a key and invokes (optional) a callback upon completion.
+Fetches an item for a given key and invokes (optional) callback once completed.
 
 **Method**:
 
@@ -134,7 +134,7 @@ getItem = async () => {
 
 ## `removeItem`
 
-Removes an item for a `key` and invokes (optional) a callback upon completion.
+Removes an item for a `key`, and invokes (optional) callback once completed.
 
 **Method**:
 
@@ -234,7 +234,7 @@ clearStorage = async () => {
 
 ## `getKeys`
 
-Gets all keys known to your app; for all callers, libraries, etc, and invokes (optional) a `callback` upon completion.
+Returns all keys known to your App, for all callers, libraries, etc. Once completed, invokes (optional) callback with errors (if any) and array of keys.
 
 **Method**:
 
@@ -260,7 +260,7 @@ A `Promise` object.
   <tbody>
     <tr>
       <td>callback</td>
-      <td>?(error: ?Error, keys: ?Array) => void	</td>
+      <td>?(error: ?Error, keys: ?Array) => void</td>
       <td>No</td>
       <td>Function that will be called with all keys found and any error.</td>
     </tr>
@@ -318,7 +318,7 @@ A `Promise` object.
       <td>keyValuePairs</td>
       <td>Array<Object></td>
       <td>Yes</td>
-      <td>Array of key-value array for the items to set.</td>
+      <td>Array of key-value object for the items to set.</td>
     </tr>
     <tr>
       <td>callback</td>
@@ -372,7 +372,7 @@ A `Promise` of array with coresponding key-value pairs found, stored as `{key: v
   <tbody>
     <tr>
       <td>keys</td>
-      <td>Array<Object></td>
+      <td>Array</td>
       <td>Yes</td>
       <td>Array of key for the items to get.</td>
     </tr>
@@ -437,7 +437,7 @@ A `Promise` object.
   <tbody>
     <tr>
       <td>keys</td>
-      <td>Array<Object></td>
+      <td>Array</td>
       <td>Yes</td>
       <td>Array of key for the items to delete.</td>
     </tr>
