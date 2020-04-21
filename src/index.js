@@ -31,7 +31,7 @@ const createPromiseAll = (promises, callback, processResult) => {
 
 export default class LocalAsyncStorage {
   /**
-   * Sets `value` for `key`.
+   * Sets value for key.
    */
   static setItem(key, value, callback) {
     return createPromise(() => {
@@ -40,7 +40,7 @@ export default class LocalAsyncStorage {
   }
 
   /**
-   * Fetches `key` value.
+   * Fetches key value.
    */
   static getItem(key, callback) {
     return createPromise(() => {
@@ -49,7 +49,7 @@ export default class LocalAsyncStorage {
   }
 
   /**
-   * Removes a `key`.
+   * Removes a key.
    */
   static removeItem(key, callback) {
     return createPromise(() => {
@@ -91,10 +91,10 @@ export default class LocalAsyncStorage {
   }
 
   /**
-   * getMultiple resolves to an array of key-value pair arrays that matches the
-   * input format of multiSet.
+   * getMultiple resolves to an array of key-value pair objects that matches the
+   * input format of getMultiple.
    *
-   *   getMultiple(['k1', 'k2']) -> {k1: 'val1', 'k2': 'val2'}
+   *   getMultiple(['k1', 'k2']) -> [{k1: 'val1'}, {'k2': 'val2'}]
    */
   static getMultiple(keys, callback) {
     const promises = keys.map(key => LocalAsyncStorage.getItem(key));
@@ -107,7 +107,7 @@ export default class LocalAsyncStorage {
   }
 
   /**
-   * Delete all the keys in the `keys` array.
+   * Delete all the keys in the keys array.
    */
   static removeMultiple(keys, callback) {
     const promises = keys.map(key => LocalAsyncStorage.removeItem(key));
