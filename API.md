@@ -61,7 +61,7 @@ A `Promise` object.
 **Example**:
 
 ```js
-setValue = async () => {
+setItem = async () => {
   try {
     await LocalAsyncStorage.setItem('@key', 'value')
   } catch(e) {
@@ -115,15 +115,20 @@ A `Promise` with item, if exists, `null` otherwise.
 
 ```js
 getItem = async () => {
-  let item
+  let value
 
   try {
-    item = await LocalAsyncStorage.getItem('@key')
+    value = await LocalAsyncStorage.getItem('@key')
   } catch(e) {
     // error
   }
 
-  console.log(item)
+  console.log(value)
+
+  /*
+    output: 
+    value
+  */
 }
 ```
 
@@ -275,6 +280,11 @@ getKeys = async () => {
   }
 
   console.log(keys)
+
+  /*
+    output: 
+    ["@key"]
+  */
 }
 ```
 
@@ -379,15 +389,23 @@ A `Promise` of array with coresponding key-value pairs found, stored as `{key: v
 
 ```js
 getMultiple = async () => {
-  let values
+  let items
 
   try {
-    values = await LocalAsyncStorage.getMultiple(['@key1', '@key2'])
+    items = await LocalAsyncStorage.getMultiple(['@key1', '@key2'])
   } catch(e) {
     // error
   }
 
-  console.log(values)
+  console.log(items)
+
+  /*
+    output: 
+    [
+      {key1: "hello1"},
+      {key2: "hello2"}
+    ]
+  */
 }
 ```
 
