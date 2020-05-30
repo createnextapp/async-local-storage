@@ -1,45 +1,45 @@
-# local-async-storage
+# async-local-storage
 
-LocalAsyncStorage is an unencrypted, asynchronous, persistent, key-value storage system that is global to the app in web browser. It should be used instead of LocalStorage.
+AsyncLocalStorage is an unencrypted, asynchronous, persistent, key-value storage system that is global to the app in web browser. It should be used instead of LocalStorage.
 
-[![NPM](https://img.shields.io/npm/v/local-async-storage.svg)](https://www.npmjs.com/package/local-async-storage) ![npm bundle size](https://img.shields.io/bundlephobia/min/local-async-storage)
+[![NPM](https://img.shields.io/npm/v/async-local-storage.svg)](https://www.npmjs.com/package/@createnextapp/async-local-storage) ![npm bundle size](https://img.shields.io/bundlephobia/min/@createnextapp/async-local-storage)
 
-## ❓ Why LocalAsyncStorage instead of LocalStorage?
+## ❓ Why AsyncLocalStorage instead of LocalStorage?
 
 **Cons of LocalStorage**
 
 LocalStorage is synchronous, each local storage operation you run will be one-at-a-time. For complex applications this is a big no-no as it'll slow down your app's runtime.
 
-**Pros of LocalAsyncStorage**
+**Pros of AsyncLocalStorage**
 
-LocalAsyncStorage is asynchronous, each local async storage operation you run will be multi-at-a-time. It'll speed up your app's runtime.
+AsyncLocalStorage is asynchronous, each local async storage operation you run will be multi-at-a-time. It'll speed up your app's runtime.
 
-The LocalAsyncStorage JavaScript code is a facade that provides [a clear JavaScript API](./API.md), real Error objects, and non-multi functions. Each method in the API returns a Promise object.
+The AsyncLocalStorage JavaScript code is a facade that provides [a clear JavaScript API](./API.md), real Error objects, and non-multi functions. Each method in the API returns a Promise object.
 
 ## 🔧 Install
 
-local-async-storage is available on npm. It can be installed with the following command:
+async-local-storage is available on npm. It can be installed with the following command:
 
 ```
-npm install --save local-async-storage
+npm install --save async-local-storage
 ```
 
-local-async-storage is available on yarn as well. It can be installed with the following command:
+async-local-storage is available on yarn as well. It can be installed with the following command:
 
 ```
-yarn add local-async-storage
+yarn add @createnextapp/async-local-storage
 ```
 
 ## 💡 Usage
 
-To learn more how to use local-async-storage:
+To learn more how to use async-local-storage:
 
 * [API Documentation](./API.md)
 
 ### Import 
 
 ```js
-import LocalAsyncStorage from 'local-async-storage'
+import AsyncLocalStorage from '@createnextapp/async-local-storage'
 ```
 
 ### Store data
@@ -47,7 +47,7 @@ import LocalAsyncStorage from 'local-async-storage'
 ```js
 storeData = async () => {
   try {
-    await LocalAsyncStorage.setItem('@key', 'value')
+    await AsyncLocalStorage.setItem('@key', 'value')
   } catch(e) {
     // error
   }
@@ -61,7 +61,7 @@ readData = async () => {
   let data
 
   try {
-    data = await LocalAsyncStorage.getItem('@key')
+    data = await AsyncLocalStorage.getItem('@key')
   } catch(e) {
     // error
   }
@@ -77,11 +77,11 @@ readData = async () => {
 
 ## 💖 Wrap Up
 
-If you think any of the `local-async-storage` can be improved, please do open a PR with any updates and submit any issues. Also, I will continue to improve this, so you might want to watch/star this repository to revisit.
+If you think any of the `async-local-storage` can be improved, please do open a PR with any updates and submit any issues. Also, I will continue to improve this, so you might want to watch/star this repository to revisit.
 
 ## 🌟 Contribution
 
-We'd love to have your helping hand on contributions to `local-async-storage` by forking and sending a pull request!
+We'd love to have your helping hand on contributions to `async-local-storage` by forking and sending a pull request!
 
 Your contributions are heartily ♡ welcome, recognized and appreciated. (✿◠‿◠)
 

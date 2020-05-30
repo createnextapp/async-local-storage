@@ -1,10 +1,10 @@
 {
-  "name": "local-async-storage",
-  "version": "0.0.3",
-  "description": "LocalAsyncStorage is an unencrypted, asynchronous, persistent, key-value storage system that is global to the app in web browser. It should be used instead of LocalStorage.",
-  "main": "dist/local-async-storage.js",
-  "module": "dist/local-async-storage.es.js",
-  "jsnext:main": "dist/local-async-storage.es.js",
+  "name": "@createnextapp/async-local-storage",
+  "version": "1.0.1",
+  "description": "AsyncLocalStorage is an unencrypted, asynchronous, persistent, key-value storage system that is global to the app in web browser. It should be used instead of LocalStorage.",
+  "main": "dist/async-local-storage.js",
+  "module": "dist/async-local-storage.es.js",
+  "jsnext:main": "dist/async-local-storage.es.js",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
@@ -13,9 +13,9 @@
   },
   "author": "Bunlong <bunlong.van@gmail.com>",
   "homepage": "https://local-async-storage.github.io",
-  "repository": "https://github.com/Bunlong/local-async-storage.git",
+  "repository": "https://github.com/CreateNextApp/async-local-storage.git",
   "bugs": {
-    "url": "https://github.com/Bunlong/local-async-storage/issues"
+    "url": "https://github.com/CreateNextApp/async-local-storage/issues"
   },
   "license": "MIT",
   "devDependencies": {

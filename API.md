@@ -63,7 +63,7 @@ A `Promise` object.
 ```js
 setItem = async () => {
   try {
-    await LocalAsyncStorage.setItem('@key', 'value')
+    await AsyncLocalStorage.setItem('@key', 'value')
   } catch(e) {
     // error
   }
@@ -118,7 +118,7 @@ getItem = async () => {
   let value
 
   try {
-    value = await LocalAsyncStorage.getItem('@key')
+    value = await AsyncLocalStorage.getItem('@key')
   } catch(e) {
     // error
   }
@@ -178,7 +178,7 @@ A `Promise` object.
 ```js
 removeItem = async () => {
   try {
-    await LocalAsyncStorage.removeItem('@key')
+    await AsyncLocalStorage.removeItem('@key')
   } catch(e) {
     // error
   }
@@ -187,7 +187,7 @@ removeItem = async () => {
 
 ## `clearStorage`
 
-Erases all `LocalAsyncStorage` for all clients, libraries, etc. You probably don't want to call this; use [removeItem](#removeItem) or [removeMultiple](#removeMultiple) to clear only your app's keys.
+Erases all `AsyncLocalStorage` for all clients, libraries, etc. You probably don't want to call this; use [removeItem](#removeItem) or [removeMultiple](#removeMultiple) to clear only your app's keys.
 
 **Method**:
 
@@ -225,7 +225,7 @@ A `Promise` object.
 ```js
 clearStorage = async () => {
   try {
-    await LocalAsyncStorage.clearStorage()
+    await AsyncLocalStorage.clearStorage()
   } catch(e) {
     // error
   }
@@ -274,7 +274,7 @@ getKeys = async () => {
   let keys = []
 
   try {
-    keys = await LocalAsyncStorage.getKeys()
+    keys = await AsyncLocalStorage.getKeys()
   } catch(e) {
     // error
   }
@@ -337,7 +337,7 @@ setMultiple = async () => {
   const secondPair = { key2: 'hello2' };
 
   try {
-    await LocalAsyncStorage.setMultiple([value1, value2])
+    await AsyncLocalStorage.setMultiple([value1, value2])
   } catch(e) {
     // error
   }
@@ -392,7 +392,7 @@ getMultiple = async () => {
   let items
 
   try {
-    items = await LocalAsyncStorage.getMultiple(['@key1', '@key2'])
+    items = await AsyncLocalStorage.getMultiple(['@key1', '@key2'])
   } catch(e) {
     // error
   }
@@ -457,7 +457,7 @@ removeFew = async () => {
   const keys = ['key1', 'key1']
   
   try {
-    await LocalAsyncStorage.removeMultiple(keys)
+    await AsyncLocalStorage.removeMultiple(keys)
   } catch(e) {
     // error
   }
