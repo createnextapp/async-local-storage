@@ -39,7 +39,7 @@ const createPromiseAll = (promises, callback, processResult): Promise<*> => {
   );
 };
 
-export default class AsyncStorage {
+export default class AsyncLocalStorage {
 
   /**
    * Fetches `key` value.
@@ -78,7 +78,7 @@ export default class AsyncStorage {
   }
 
   /**
-   * Erases *all* AsyncStorage for the domain.
+   * Erases *all* AsyncLocalStorage for the domain.
    */
   static clear(callback?: Function): Promise<*> {
     return createPromise(() => {
@@ -113,7 +113,7 @@ export default class AsyncStorage {
    *   multiGet(['k1', 'k2']) -> [['k1', 'val1'], ['k2', 'val2']]
    */
   static multiGet(keys: Array<string>, callback?: Function): Promise<*> {
-    const promises = keys.map(key => AsyncStorage.getItem(key));
+    const promises = keys.map(key => AsyncLocalStorage.getItem(key));
     const processResult = result => result.map((value, i) => [keys[i], value]);
     return createPromiseAll(promises, callback, processResult);
   }
@@ -123,7 +123,7 @@ export default class AsyncStorage {
    *   multiSet([['k1', 'val1'], ['k2', 'val2']])
    */
   static multiSet(keyValuePairs: Array<Array<string>>, callback?: Function): Promise<*> {
-    const promises = keyValuePairs.map(item => AsyncStorage.setItem(item[0], item[1]));
+    const promises = keyValuePairs.map(item => AsyncLocalStorage.setItem(item[0], item[1]));
     return createPromiseAll(promises, callback);
   }
 
@@ -131,7 +131,7 @@ export default class AsyncStorage {
    * Delete all the keys in the `keys` array.
    */
   static multiRemove(keys: Array<string>, callback?: Function): Promise<*> {
-    const promises = keys.map(key => AsyncStorage.removeItem(key));
+    const promises = keys.map(key => AsyncLocalStorage.removeItem(key));
     return createPromiseAll(promises, callback);
   }
 
@@ -142,7 +142,7 @@ export default class AsyncStorage {
    *   multiMerge([['k1', 'val1'], ['k2', 'val2']])
    */
   static multiMerge(keyValuePairs: Array<Array<string>>, callback?: Function): Promise<*> {
-    const promises = keyValuePairs.map(item => AsyncStorage.mergeItem(item[0], item[1]));
+    const promises = keyValuePairs.map(item => AsyncLocalStorage.mergeItem(item[0], item[1]));
     return createPromiseAll(promises, callback);
   }
 }

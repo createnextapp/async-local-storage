@@ -12,7 +12,7 @@
     "pretest": "npm run build"
   },
   "author": "Bunlong <bunlong.van@gmail.com>",
-  "homepage": "https://local-async-storage.github.io",
+  "homepage": "https://github.com/CreateNextApp/async-local-storage.git",
   "repository": "https://github.com/CreateNextApp/async-local-storage.git",
   "bugs": {
     "url": "https://github.com/CreateNextApp/async-local-storage/issues"
@@ -31,7 +31,7 @@
     "localstorage",
     "local-storage",
     "asyncstorage",
-    "localasyncstorage",
+    "asynclocalstorage",
     "local-async-storage",
     "storage",
     "react",

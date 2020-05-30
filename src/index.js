@@ -29,7 +29,7 @@ const createPromiseAll = (promises, callback, processResult) => {
   );
 };
 
-export default class LocalAsyncStorage {
+export default class AsyncLocalStorage {
   /**
    * Sets value for key.
    */
@@ -58,7 +58,7 @@ export default class LocalAsyncStorage {
   }
 
   /**
-   * Erases *all* LocalAsyncStorage for the domain.
+   * Erases *all* AsyncLocalStorage for the domain.
    */
   static clearStorage(callback) {
     return createPromise(() => {
@@ -86,7 +86,7 @@ export default class LocalAsyncStorage {
    *   setMultifple([{k1: 'val1'}, {k2: 'val2'}])
    */
   static setMultiple(keyValuePairs, callback) {
-    const promises = keyValuePairs.map(item => { for(const key in item) LocalAsyncStorage.setItem(key, item[key]) });
+    const promises = keyValuePairs.map(item => { for(const key in item) AsyncLocalStorage.setItem(key, item[key]) });
     return createPromiseAll(promises, callback);
   }
 
@@ -97,7 +97,7 @@ export default class LocalAsyncStorage {
    *   getMultiple(['k1', 'k2']) -> [{k1: 'val1'}, {'k2': 'val2'}]
    */
   static getMultiple(keys, callback) {
-    const promises = keys.map(key => LocalAsyncStorage.getItem(key));
+    const promises = keys.map(key => AsyncLocalStorage.getItem(key));
     const processResult = result => result.map((value, i) => {
       const json = {}
       json[keys[i]] = value
@@ -110,7 +110,7 @@ export default class LocalAsyncStorage {
    * Delete all the keys in the keys array.
    */
   static removeMultiple(keys, callback) {
-    const promises = keys.map(key => LocalAsyncStorage.removeItem(key));
+    const promises = keys.map(key => AsyncLocalStorage.removeItem(key));
     return createPromiseAll(promises, callback);
   }
 }

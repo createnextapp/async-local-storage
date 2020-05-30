@@ -1,9 +1,9 @@
-import LocalAsyncStorage from 'local-async-storage'
+import AsyncLocalStorage from '@createnextapp/async-local-storage'
 
 export default function Index() {
   const setItem = async () => {
     try {
-      await LocalAsyncStorage.setItem('@me', 'Bunlong')
+      await AsyncLocalStorage.setItem('@me', 'Bunlong')
     } catch (e) {
       // read error
     }
@@ -15,7 +15,7 @@ export default function Index() {
     let item
 
     try {
-      item = await LocalAsyncStorage.getItem('@me')
+      item = await AsyncLocalStorage.getItem('@me')
     } catch(e) {
       // read error
     }
@@ -25,7 +25,7 @@ export default function Index() {
 
   const removeItem = async () => {
     try {
-      await LocalAsyncStorage.removeItem('@me')
+      await AsyncLocalStorage.removeItem('@me')
     } catch(e) {
       // remove error
     }
@@ -35,7 +35,7 @@ export default function Index() {
 
   const clearStorage = async () => {
     try {
-      await LocalAsyncStorage.clearStorage()
+      await AsyncLocalStorage.clearStorage()
     } catch(e) {
       // remove error
     }
@@ -47,7 +47,7 @@ export default function Index() {
     let keys = []
     
     try {
-      keys = await LocalAsyncStorage.getKeys()
+      keys = await AsyncLocalStorage.getKeys()
     } catch(e) {
       // read key error
     }
@@ -60,7 +60,7 @@ export default function Index() {
     const value2 = { key2: 'hello2' };
 
     try {
-      await LocalAsyncStorage.setMultiple([value1, value2])
+      await AsyncLocalStorage.setMultiple([value1, value2])
     } catch(e) {
       //save error
     }
@@ -72,7 +72,7 @@ export default function Index() {
     let values
 
     try {
-      values = await LocalAsyncStorage.getMultiple(['key1', 'key2'])
+      values = await AsyncLocalStorage.getMultiple(['key1', 'key2'])
     } catch(e) {
       // read error
     }
@@ -84,7 +84,7 @@ export default function Index() {
     const keys = ['key1', 'key2']
 
     try {
-      await LocalAsyncStorage.removeMultiple(keys)
+      await AsyncLocalStorage.removeMultiple(keys)
     } catch(e) {
       // remove error
     }
