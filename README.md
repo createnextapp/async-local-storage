@@ -21,7 +21,7 @@ The AsyncLocalStorage JavaScript code is a facade that provides [a clear JavaScr
 async-local-storage is available on npm. It can be installed with the following command:
 
 ```
-npm install --save async-local-storage
+npm install --save @createnextapp/async-local-storage
 ```
 
 async-local-storage is available on yarn as well. It can be installed with the following command:
